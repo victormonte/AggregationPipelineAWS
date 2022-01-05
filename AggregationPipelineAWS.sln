@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskProducer", "RiskProducer\RiskProducer.csproj", "{6B734572-DC08-4B45-9CF7-20FEA581E5D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskStateLambda", "RiskStateLambda\src\RiskStateLambda\RiskStateLambda.csproj", "{1B078613-2883-4162-8A9F-0808CF3CD860}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskStateLambda.Tests", "RiskStateLambda\test\RiskStateLambda.Tests\RiskStateLambda.Tests.csproj", "{018EFAE4-034C-4074-AE83-D7D52CFF1FE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskReduceLambda", "RiskReduceLambda\src\RiskReduceLambda\RiskReduceLambda.csproj", "{11539F63-DD89-404D-A3EF-EFC44F3DB175}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B734572-DC08-4B45-9CF7-20FEA581E5D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B734572-DC08-4B45-9CF7-20FEA581E5D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B734572-DC08-4B45-9CF7-20FEA581E5D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B734572-DC08-4B45-9CF7-20FEA581E5D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B078613-2883-4162-8A9F-0808CF3CD860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B078613-2883-4162-8A9F-0808CF3CD860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B078613-2883-4162-8A9F-0808CF3CD860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B078613-2883-4162-8A9F-0808CF3CD860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{018EFAE4-034C-4074-AE83-D7D52CFF1FE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{018EFAE4-034C-4074-AE83-D7D52CFF1FE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{018EFAE4-034C-4074-AE83-D7D52CFF1FE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{018EFAE4-034C-4074-AE83-D7D52CFF1FE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11539F63-DD89-404D-A3EF-EFC44F3DB175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11539F63-DD89-404D-A3EF-EFC44F3DB175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11539F63-DD89-404D-A3EF-EFC44F3DB175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11539F63-DD89-404D-A3EF-EFC44F3DB175}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

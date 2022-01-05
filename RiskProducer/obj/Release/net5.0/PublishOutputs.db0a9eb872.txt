@@ -1,0 +1,8 @@
+C:\Projects\AggregationPipelineAWS\RiskProducer\bin\Release\net5.0\publish\RiskProducer.exe
+C:\Projects\AggregationPipelineAWS\RiskProducer\bin\Release\net5.0\publish\RiskProducer.dll
+C:\Projects\AggregationPipelineAWS\RiskProducer\bin\Release\net5.0\publish\RiskProducer.deps.json
+C:\Projects\AggregationPipelineAWS\RiskProducer\bin\Release\net5.0\publish\RiskProducer.runtimeconfig.json
+C:\Projects\AggregationPipelineAWS\RiskProducer\bin\Release\net5.0\publish\RiskProducer.pdb
+C:\Projects\AggregationPipelineAWS\RiskProducer\bin\Release\net5.0\publish\AWSSDK.Core.dll
+C:\Projects\AggregationPipelineAWS\RiskProducer\bin\Release\net5.0\publish\AWSSDK.Kinesis.dll
+C:\Projects\AggregationPipelineAWS\RiskProducer\bin\Release\net5.0\publish\Newtonsoft.Json.dll

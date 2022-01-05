@@ -1,0 +1,36 @@
+version: '3.3'
+
+services:
+  
+  localstack:
+    image: localstack/localstack:latest
+    hostname: localstack
+    container_name: localstack
+    restart: always
+    ports:
+      - "4566:4566"
+      - "8080:8080"
+    environment:
+      - SERVICES=kinesis,lambda
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - HOSTNAME=localstack
+      - LOCALSTACK_HOSTNAME=localstack
+      - AWS_DEFAULT_REGION=eu-west-1
+      - AWS_ACCESS_KEY_ID=xx
+      - AWS_SECRET_ACCESS_KEY=xx
+      - LAMBDA_EXECUTOR=docker-reuse
+      - LAMBDA_REMOVE_CONTAINERS=1
+      - LAMBDA_DOCKER_NETWORK=profile-network # using a specified network to allow lambda to reach LocalStack
+      - DEBUG=1
+    volumes:
+      - ./images/localstack/scripts:/docker-entrypoint-initaws.d
+      - ./images/localstack/tmp:/tmp/localstack
+      - ./images/lambdas:/tmp/lambdas
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - profile-network
+        
+networks:
+  profile-network:
+    name: profile-network
+    driver: bridge

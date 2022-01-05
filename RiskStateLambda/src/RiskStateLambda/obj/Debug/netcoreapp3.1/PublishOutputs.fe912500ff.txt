@@ -1,0 +1,9 @@
+/mnt/c/Projects/AggregationPipelineAWS/RiskMapLambda/src/RiskMapLambda/bin/Debug/netcoreapp3.1/publish/RiskMapLambda.dll
+/mnt/c/Projects/AggregationPipelineAWS/RiskMapLambda/src/RiskMapLambda/bin/Debug/netcoreapp3.1/publish/RiskMapLambda.deps.json
+/mnt/c/Projects/AggregationPipelineAWS/RiskMapLambda/src/RiskMapLambda/bin/Debug/netcoreapp3.1/publish/RiskMapLambda.runtimeconfig.json
+/mnt/c/Projects/AggregationPipelineAWS/RiskMapLambda/src/RiskMapLambda/bin/Debug/netcoreapp3.1/publish/RiskMapLambda.pdb
+/mnt/c/Projects/AggregationPipelineAWS/RiskMapLambda/src/RiskMapLambda/bin/Debug/netcoreapp3.1/publish/Amazon.Lambda.Core.dll
+/mnt/c/Projects/AggregationPipelineAWS/RiskMapLambda/src/RiskMapLambda/bin/Debug/netcoreapp3.1/publish/Amazon.Lambda.KinesisEvents.dll
+/mnt/c/Projects/AggregationPipelineAWS/RiskMapLambda/src/RiskMapLambda/bin/Debug/netcoreapp3.1/publish/Amazon.Lambda.Serialization.SystemTextJson.dll
+/mnt/c/Projects/AggregationPipelineAWS/RiskMapLambda/src/RiskMapLambda/bin/Debug/netcoreapp3.1/publish/AWSSDK.Core.dll
+/mnt/c/Projects/AggregationPipelineAWS/RiskMapLambda/src/RiskMapLambda/bin/Debug/netcoreapp3.1/publish/AWSSDK.Kinesis.dll

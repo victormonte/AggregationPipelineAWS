@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "Jju6/vpAsepBlVknTK9Q/jm0tAwLXRlDIrgLrwvQ/SoOoHiLD/WhxmdZiE/wDhINsLU6ceMdInQvXprxY2ZUYg==",
+  "success": true,
+  "projectFilePath": "C:\\Projects\\AggregationPipelineAWS\\RiskStateLambda\\src\\RiskStateLambda\\RiskStateLambda.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Victor.Monte\\.nuget\\packages\\amazon.lambda.core\\2.1.0\\amazon.lambda.core.2.1.0.nupkg.sha512",
+    "C:\\Users\\Victor.Monte\\.nuget\\packages\\amazon.lambda.kinesisevents\\2.0.0\\amazon.lambda.kinesisevents.2.0.0.nupkg.sha512",
+    "C:\\Users\\Victor.Monte\\.nuget\\packages\\amazon.lambda.serialization.systemtextjson\\2.2.0\\amazon.lambda.serialization.systemtextjson.2.2.0.nupkg.sha512",
+    "C:\\Users\\Victor.Monte\\.nuget\\packages\\awssdk.core\\3.7.5.6\\awssdk.core.3.7.5.6.nupkg.sha512",
+    "C:\\Users\\Victor.Monte\\.nuget\\packages\\awssdk.dynamodbv2\\3.7.2.2\\awssdk.dynamodbv2.3.7.2.2.nupkg.sha512",
+    "C:\\Users\\Victor.Monte\\.nuget\\packages\\awssdk.kinesis\\3.7.0\\awssdk.kinesis.3.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
