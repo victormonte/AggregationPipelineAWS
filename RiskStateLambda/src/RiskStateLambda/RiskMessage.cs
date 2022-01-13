@@ -6,7 +6,7 @@ namespace RiskStateLambda
     public class RiskMessage
     {
         public Guid TradeId { get; set; }
-        public decimal Value { get; set;}
+        public decimal Amount { get; set;}
         public int Version { get; set;}
         public DateTime CreatedAt { get; set;}
         public Hierarchy Hierarchy { get; set;}

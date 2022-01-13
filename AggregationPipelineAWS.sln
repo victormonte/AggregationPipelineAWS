@@ -4,9 +4,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskProducer", "RiskProduce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskStateLambda", "RiskStateLambda\src\RiskStateLambda\RiskStateLambda.csproj", "{1B078613-2883-4162-8A9F-0808CF3CD860}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskStateLambda.Tests", "RiskStateLambda\test\RiskStateLambda.Tests\RiskStateLambda.Tests.csproj", "{018EFAE4-034C-4074-AE83-D7D52CFF1FE9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskReduceLambda", "RiskReduceLambda\src\RiskReduceLambda\RiskReduceLambda.csproj", "{11539F63-DD89-404D-A3EF-EFC44F3DB175}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskMapLambda", "RiskMapLambda\src\RiskMapLambda\RiskMapLambda.csproj", "{63FE203D-5BDB-4FB3-9021-B73B506C2C12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskMapLambda.Tests", "RiskMapLambda\test\RiskMapLambda.Tests\RiskMapLambda.Tests.csproj", "{038EA2EB-C024-4BFB-99AE-95D57F815F7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,13 +24,17 @@ Global
 		{1B078613-2883-4162-8A9F-0808CF3CD860}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B078613-2883-4162-8A9F-0808CF3CD860}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B078613-2883-4162-8A9F-0808CF3CD860}.Release|Any CPU.Build.0 = Release|Any CPU
-		{018EFAE4-034C-4074-AE83-D7D52CFF1FE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{018EFAE4-034C-4074-AE83-D7D52CFF1FE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{018EFAE4-034C-4074-AE83-D7D52CFF1FE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{018EFAE4-034C-4074-AE83-D7D52CFF1FE9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{11539F63-DD89-404D-A3EF-EFC44F3DB175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{11539F63-DD89-404D-A3EF-EFC44F3DB175}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11539F63-DD89-404D-A3EF-EFC44F3DB175}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11539F63-DD89-404D-A3EF-EFC44F3DB175}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63FE203D-5BDB-4FB3-9021-B73B506C2C12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63FE203D-5BDB-4FB3-9021-B73B506C2C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63FE203D-5BDB-4FB3-9021-B73B506C2C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63FE203D-5BDB-4FB3-9021-B73B506C2C12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{038EA2EB-C024-4BFB-99AE-95D57F815F7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{038EA2EB-C024-4BFB-99AE-95D57F815F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{038EA2EB-C024-4BFB-99AE-95D57F815F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{038EA2EB-C024-4BFB-99AE-95D57F815F7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

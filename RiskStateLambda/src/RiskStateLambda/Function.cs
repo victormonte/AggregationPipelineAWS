@@ -35,7 +35,7 @@ namespace RiskStateLambda
                 
                 var riskMessage = JsonSerializer.Deserialize<RiskMessage>(await reader.ReadToEndAsync());
                 
-                logger.LogLine($"TradeId: {riskMessage.TradeId}, Amount: {riskMessage.Value}, Version: {riskMessage.Version}");
+                logger.LogLine($"TradeId: {riskMessage.TradeId}, Amount: {riskMessage.Amount}, Version: {riskMessage.Version}");
 
                 var updateRequest = new UpdateItemRequest
                 {
@@ -52,7 +52,7 @@ namespace RiskStateLambda
                     ExpressionAttributeValues = new Dictionary<string, AttributeValue>
                     {
                         { ":new_version", new AttributeValue { N = riskMessage.Version.ToString(CultureInfo.InvariantCulture) } },
-                        { ":new_value", new AttributeValue { N = riskMessage.Value.ToString(CultureInfo.InvariantCulture) } },
+                        { ":new_value", new AttributeValue { N = riskMessage.Amount.ToString(CultureInfo.InvariantCulture) } },
                         { ":new_hierarchy", new AttributeValue { S = JsonSerializer.Serialize(riskMessage.Hierarchy) } },
                         { ":created_at", new AttributeValue { S = riskMessage.CreatedAt.ToString("dd-MM-yyyy HH:mm:ss")}}
                     }

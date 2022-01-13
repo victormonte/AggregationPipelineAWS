@@ -32,12 +32,15 @@ namespace RiskProducer
         {
             Console.WriteLine("Risk Message Producer started");
 
-            var message = NewRiskMessage();
+            for (int i = 0; i <= 100; i++)
+            {
+                var message = NewRiskMessage();
 
-            Console.WriteLine($"Risk message {message.TradeId} created. Value: {message.Value}, " +
-                              $"Version {message.Version}, CreatedAt: {message.CreatedAt:s}");
+                Console.WriteLine($"Risk message {message.TradeId} created. Value: {message.Value}, " +
+                                  $"Version {message.Version}, CreatedAt: {message.CreatedAt:s}");
 
-            await Publish(message);
+                await Publish(message);
+            }
 
             Console.WriteLine("Risk Message Producer finished");
         }

@@ -1,0 +1,9 @@
+C:\Projects\AggregationPipelineAWS\RiskMapLambda\src\RiskMapLambda\bin\Release\netcoreapp3.1\publish\RiskMapLambda.dll
+C:\Projects\AggregationPipelineAWS\RiskMapLambda\src\RiskMapLambda\bin\Release\netcoreapp3.1\publish\RiskMapLambda.deps.json
+C:\Projects\AggregationPipelineAWS\RiskMapLambda\src\RiskMapLambda\bin\Release\netcoreapp3.1\publish\RiskMapLambda.runtimeconfig.json
+C:\Projects\AggregationPipelineAWS\RiskMapLambda\src\RiskMapLambda\bin\Release\netcoreapp3.1\publish\RiskMapLambda.pdb
+C:\Projects\AggregationPipelineAWS\RiskMapLambda\src\RiskMapLambda\bin\Release\netcoreapp3.1\publish\Amazon.Lambda.Core.dll
+C:\Projects\AggregationPipelineAWS\RiskMapLambda\src\RiskMapLambda\bin\Release\netcoreapp3.1\publish\Amazon.Lambda.DynamoDBEvents.dll
+C:\Projects\AggregationPipelineAWS\RiskMapLambda\src\RiskMapLambda\bin\Release\netcoreapp3.1\publish\Amazon.Lambda.Serialization.SystemTextJson.dll
+C:\Projects\AggregationPipelineAWS\RiskMapLambda\src\RiskMapLambda\bin\Release\netcoreapp3.1\publish\AWSSDK.Core.dll
+C:\Projects\AggregationPipelineAWS\RiskMapLambda\src\RiskMapLambda\bin\Release\netcoreapp3.1\publish\AWSSDK.DynamoDBv2.dll
