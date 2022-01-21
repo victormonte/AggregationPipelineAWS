@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "e9f1MjnhcDKmPJndBrzWDd68zO0lDC1QssqDauncTYUvp6C8F4soSa+OSipu2stne+6FoaSU1BOTdwDYcNX2TA==",
+  "dgSpecHash": "lROTi2altXpTYtlTkNneKkXl23LyhGne2BA/TwN/4f1xHlPSZdd4CxUfnSdyLYPZs/uIPEDXM9GDzU0MTcnVSQ==",
   "success": true,
   "projectFilePath": "C:\\Projects\\AggregationPipelineAWS\\RiskReduceLambda\\src\\RiskReduceLambda\\RiskReduceLambda.csproj",
   "expectedPackageFiles": [
@@ -8,7 +8,8 @@
     "C:\\Users\\Victor.Monte\\.nuget\\packages\\amazon.lambda.dynamodbevents\\2.1.0\\amazon.lambda.dynamodbevents.2.1.0.nupkg.sha512",
     "C:\\Users\\Victor.Monte\\.nuget\\packages\\amazon.lambda.serialization.systemtextjson\\2.2.0\\amazon.lambda.serialization.systemtextjson.2.2.0.nupkg.sha512",
     "C:\\Users\\Victor.Monte\\.nuget\\packages\\awssdk.core\\3.7.3.33\\awssdk.core.3.7.3.33.nupkg.sha512",
-    "C:\\Users\\Victor.Monte\\.nuget\\packages\\awssdk.dynamodbv2\\3.7.0.94\\awssdk.dynamodbv2.3.7.0.94.nupkg.sha512"
+    "C:\\Users\\Victor.Monte\\.nuget\\packages\\awssdk.dynamodbv2\\3.7.0.94\\awssdk.dynamodbv2.3.7.0.94.nupkg.sha512",
+    "C:\\Users\\Victor.Monte\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

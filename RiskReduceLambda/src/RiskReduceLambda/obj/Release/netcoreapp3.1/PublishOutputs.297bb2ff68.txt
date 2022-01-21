@@ -1,0 +1,10 @@
+C:\Projects\AggregationPipelineAWS\RiskReduceLambda\src\RiskReduceLambda\bin\Release\netcoreapp3.1\publish\RiskReduceLambda.dll
+C:\Projects\AggregationPipelineAWS\RiskReduceLambda\src\RiskReduceLambda\bin\Release\netcoreapp3.1\publish\RiskReduceLambda.deps.json
+C:\Projects\AggregationPipelineAWS\RiskReduceLambda\src\RiskReduceLambda\bin\Release\netcoreapp3.1\publish\RiskReduceLambda.runtimeconfig.json
+C:\Projects\AggregationPipelineAWS\RiskReduceLambda\src\RiskReduceLambda\bin\Release\netcoreapp3.1\publish\RiskReduceLambda.pdb
+C:\Projects\AggregationPipelineAWS\RiskReduceLambda\src\RiskReduceLambda\bin\Release\netcoreapp3.1\publish\Amazon.Lambda.Core.dll
+C:\Projects\AggregationPipelineAWS\RiskReduceLambda\src\RiskReduceLambda\bin\Release\netcoreapp3.1\publish\Amazon.Lambda.DynamoDBEvents.dll
+C:\Projects\AggregationPipelineAWS\RiskReduceLambda\src\RiskReduceLambda\bin\Release\netcoreapp3.1\publish\Amazon.Lambda.Serialization.SystemTextJson.dll
+C:\Projects\AggregationPipelineAWS\RiskReduceLambda\src\RiskReduceLambda\bin\Release\netcoreapp3.1\publish\AWSSDK.Core.dll
+C:\Projects\AggregationPipelineAWS\RiskReduceLambda\src\RiskReduceLambda\bin\Release\netcoreapp3.1\publish\AWSSDK.DynamoDBv2.dll
+C:\Projects\AggregationPipelineAWS\RiskReduceLambda\src\RiskReduceLambda\bin\Release\netcoreapp3.1\publish\Newtonsoft.Json.dll

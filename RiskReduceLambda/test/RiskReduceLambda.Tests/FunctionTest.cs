@@ -32,8 +32,8 @@ namespace RiskReduceLambda.Tests
                         {
                             ApproximateCreationDateTime = DateTime.Now,
                             Keys = new Dictionary<string, AttributeValue> { {"id", new AttributeValue { S = "MyId" } } },
-                            NewImage = new Dictionary<string, AttributeValue> { { "field1", new AttributeValue { S = "NewValue" } }, { "field2", new AttributeValue { S = "AnotherNewValue" } } },
-                            OldImage = new Dictionary<string, AttributeValue> { { "field1", new AttributeValue { S = "OldValue" } }, { "field2", new AttributeValue { S = "AnotherOldValue" } } },
+                            NewImage = new Dictionary<string, AttributeValue> { { "Message", new AttributeValue { S =  "{\"Delta\":{\"FXSpot\":{\"AMER\":966,\"APAC\":-416},\"FXOption\":{\"APAC\":4395,\"EMEA\":2667,\"AMER\":-4234}},\"PV\":{\"FXOption\":{\"AMER\":4303,\"APAC\":5888,\"EMEA\":8072},\"FXSpot\":{\"AMER\":3228,\"EMEA\":5551,\"APAC\":7442}}}"} } },
+                            OldImage = null,
                             StreamViewType = StreamViewType.NEW_AND_OLD_IMAGES
                         }
                     }

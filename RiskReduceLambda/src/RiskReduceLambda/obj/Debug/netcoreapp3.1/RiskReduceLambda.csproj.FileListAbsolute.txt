@@ -16,3 +16,4 @@ C:\Projects\AggregationPipelineAWS\RiskReduceLambda\src\RiskReduceLambda\obj\Deb
 C:\Projects\AggregationPipelineAWS\RiskReduceLambda\src\RiskReduceLambda\obj\Debug\netcoreapp3.1\RiskReduceLambda.dll
 C:\Projects\AggregationPipelineAWS\RiskReduceLambda\src\RiskReduceLambda\obj\Debug\netcoreapp3.1\RiskReduceLambda.pdb
 C:\Projects\AggregationPipelineAWS\RiskReduceLambda\src\RiskReduceLambda\obj\Debug\netcoreapp3.1\RiskReduceLambda.genruntimeconfig.cache
+C:\Projects\AggregationPipelineAWS\RiskReduceLambda\src\RiskReduceLambda\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll

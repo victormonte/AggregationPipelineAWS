@@ -10,6 +10,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskMapLambda", "RiskMapLam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskMapLambda.Tests", "RiskMapLambda\test\RiskMapLambda.Tests\RiskMapLambda.Tests.csproj", "{038EA2EB-C024-4BFB-99AE-95D57F815F7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskReduceLambda.Tests", "RiskReduceLambda\test\RiskReduceLambda.Tests\RiskReduceLambda.Tests.csproj", "{C6529892-41A3-47EC-9EFA-ED7C33970234}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskStateLambda.Tests", "RiskStateLambda\test\RiskStateLambda.Tests\RiskStateLambda.Tests.csproj", "{69EAD978-3C5A-4F32-B900-B5FA4722089F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +40,13 @@ Global
 		{038EA2EB-C024-4BFB-99AE-95D57F815F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{038EA2EB-C024-4BFB-99AE-95D57F815F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{038EA2EB-C024-4BFB-99AE-95D57F815F7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6529892-41A3-47EC-9EFA-ED7C33970234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6529892-41A3-47EC-9EFA-ED7C33970234}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6529892-41A3-47EC-9EFA-ED7C33970234}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6529892-41A3-47EC-9EFA-ED7C33970234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69EAD978-3C5A-4F32-B900-B5FA4722089F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69EAD978-3C5A-4F32-B900-B5FA4722089F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69EAD978-3C5A-4F32-B900-B5FA4722089F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69EAD978-3C5A-4F32-B900-B5FA4722089F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
