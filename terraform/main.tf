@@ -46,11 +46,6 @@ resource "aws_dynamodb_table" "stateful_state_table" {
     type = "S"
   }
 
-  ttl {
-    attribute_name = "TimeToExist"
-    enabled        = false
-  }
-
   tags = {
     Name        = "StatefulStateTable"
     Environment = "production"
@@ -66,52 +61,108 @@ resource "aws_iam_role" "state_lambda_iam_role" {
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "Stmt1643134282466",
-      "Action": [
-        "kinesis:DescribeStream",
-        "kinesis:DescribeStreamSummary",
-        "kinesis:GetRecords",
-        "kinesis:GetShardIterator",
-        "kinesis:ListShards",
-        "kinesis:ListStreams",
-        "kinesis:SubscribeToShard"
-      ],
+      "Action": "sts:AssumeRole",
+      "Principal": {
+        "Service": "lambda.amazonaws.com"
+      },
       "Effect": "Allow",
-      "Resource": "arn:aws:kinesis:eu-west-1:528130383285:stream/StatelessRiskDataStream"
-    },
-    {
-        "Sid": "AllowLambdaFunctionInvocation",
-        "Effect": "Allow",
-        "Action": [
-            "lambda:InvokeFunction"
-        ],
-        "Resource": [
-            "*"
-        ]
-    },
-    {
-        "Action": [
-            "logs:CreateLogGroup",
-            "logs:CreateLogStream",
-            "logs:PutLogEvents"
-        ],
-        "Resource": "arn:aws:logs:*:*:*",
-        "Effect": "Allow"
-    },
-    {
-        "Sid": "APIAccessForDynamoDBStreams",
-        "Effect": "Allow",
-        "Action": [
-            "dynamodb:GetRecords",
-            "dynamodb:GetShardIterator",
-            "dynamodb:DescribeStream",
-            "dynamodb:ListStreams"
-        ],
-        "Resource": "arn:aws:dynamodb:eu-west-1:528130383285:table/StatefulStateTable/stream/*"
+      "Sid": ""
     }
   ]
 }
 EOF
+}
+
+resource "aws_iam_policy" "state_lambda_kinesis_policy" {
+  name        = "state-lambda-kinesis-policy"
+  path        = "/"
+  description = "Policy to allow state lambda to read form kinesis stream"
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Effect": "Allow",
+          "Action": [
+              "kinesis:DescribeStream",
+              "kinesis:DescribeStreamSummary",
+              "kinesis:GetRecords",
+              "kinesis:GetShardIterator",
+              "kinesis:ListShards",
+              "kinesis:ListStreams",
+              "kinesis:SubscribeToShard"
+          ],
+          "Resource": [
+              "${aws_kinesis_stream.stateless_risk_data_stream.arn}"
+          ]
+      }
+  ]
+}
+EOF
+}
+
+resource "aws_iam_role_policy_attachment" "state_lambda_kinesis_policy_attach" {
+  role       = aws_iam_role.state_lambda_iam_role.name
+  policy_arn = aws_iam_policy.state_lambda_kinesis_policy.arn
+}
+
+resource "aws_iam_policy" "state_lambda_logs_policy" {
+  name        = "state-lambda-logs-policy"
+  path        = "/"
+  description = "Policy to allow State Lambda create log groups"
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Effect": "Allow",
+          "Action": [
+              "logs:CreateLogGroup",
+              "logs:CreateLogStream",
+              "logs:PutLogEvents"
+          ],
+          "Resource": "arn:aws:logs:*:*:*"
+      }
+  ]
+}
+EOF
+}
+
+resource "aws_iam_role_policy_attachment" "state_lambda_logs_policy_attach" {
+  role       = aws_iam_role.state_lambda_iam_role.name
+  policy_arn = aws_iam_policy.state_lambda_logs_policy.arn
+}
+
+resource "aws_iam_policy" "state_lambda_dynamodb_policy" {
+  name        = "state-lambda-dynamodb-policy"
+  description = "Policy to allow State Lambda to persist on dynamodb table"
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Effect": "Allow",
+          "Action": [
+              "dynamodb:GetRecords",
+              "dynamodb:GetShardIterator",
+              "dynamodb:DescribeStream",
+              "dynamodb:ListStreams"
+          ],
+          "Resource": [
+              "${aws_dynamodb_table.stateful_state_table.arn}"
+          ]
+      }
+  ]
+}
+EOF
+}
+
+resource "aws_iam_role_policy_attachment" "state_lambda_dynamodb_policy_attach" {
+  role       = aws_iam_role.state_lambda_iam_role.name
+  policy_arn = aws_iam_policy.state_lambda_dynamodb_policy.arn
 }
 
 variable "state_lambda_function_name" {
@@ -124,25 +175,14 @@ resource "aws_cloudwatch_log_group" "state_lambda_log_group" {
 }
 
 resource "aws_lambda_function" "state_lambda" {
-  filename      = "state_lambda.zip"
+  filename      = "../images/lambdas/StateLambda.zip"
   function_name = var.state_lambda_function_name
   role          = aws_iam_role.state_lambda_iam_role.arn
   handler       = "RiskStateLambda::RiskStateLambda.Function::FunctionHandler"
 
-  # The filebase64sha256() function is available in Terraform 0.11.12 and later
-  # For Terraform 0.11.11 and earlier, use the base64sha256() function and the file() function:
-  # source_code_hash = "${base64sha256(file("lambda_function_payload.zip"))}"
-  source_code_hash = filebase64sha256("../images/lambdads/state_lambda.zip")
-
   runtime = "dotnetcore3.1"
 
-#   environment {
-#     variables = {
-#       foo = "bar"
-#     }
-#   }
-
-    depends_on = [
+  depends_on = [
     aws_cloudwatch_log_group.state_lambda_log_group,
     aws_kinesis_stream.stateless_risk_data_stream,
     aws_dynamodb_table.stateful_state_table
