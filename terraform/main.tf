@@ -189,6 +189,12 @@ resource "aws_lambda_function" "state_lambda" {
   ]
 }
 
+resource "aws_lambda_event_source_mapping" "state_lambda_kinesis_event_mapping" {
+  event_source_arn  = aws_kinesis_stream.stateless_risk_data_stream.arn
+  function_name     = aws_lambda_function.state_lambda.arn
+  starting_position = "LATEST"
+}
+
 // dynamodb - reduce table
 // map lambda
 // dynamodb - aggregate table
