@@ -32,7 +32,7 @@ namespace RiskProducer
         {
             Console.WriteLine("Risk Message Producer started");
 
-            for (int i = 0; i <= 0; i++)
+            for (int i = 1; i <= 30; i++)
             {
                 var message = NewRiskMessage();
             
