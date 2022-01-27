@@ -12,8 +12,7 @@ provider "aws" {
     region = "eu-west-1"
 }
 
-// roles, polices, dynamo event mapper, kinesis event mapper
-// kinesis stream
+## Kinesis Stream
 resource "aws_kinesis_stream" "stateless_risk_data_stream" {
     name = "StatelessRiskDataStream"
     shard_count = 1
@@ -33,7 +32,7 @@ resource "aws_kinesis_stream" "stateless_risk_data_stream" {
   }
 }
 
-// dynamodb table - state table
+## Dynamodb Table
 resource "aws_dynamodb_table" "stateful_state_table" {
   name           = "StatefulStateTable"
   billing_mode   = "PROVISIONED"
@@ -52,7 +51,7 @@ resource "aws_dynamodb_table" "stateful_state_table" {
   }
 } 
 
-// state lambda
+## IAM Role
 resource "aws_iam_role" "state_lambda_iam_role" {
   name = "state_lambda_iam_role"
 
@@ -73,6 +72,7 @@ resource "aws_iam_role" "state_lambda_iam_role" {
 EOF
 }
 
+## Kinesis Policy
 resource "aws_iam_policy" "state_lambda_kinesis_policy" {
   name        = "state-lambda-kinesis-policy"
   path        = "/"
@@ -107,6 +107,7 @@ resource "aws_iam_role_policy_attachment" "state_lambda_kinesis_policy_attach" {
   policy_arn = aws_iam_policy.state_lambda_kinesis_policy.arn
 }
 
+## Logs Policy
 resource "aws_iam_policy" "state_lambda_logs_policy" {
   name        = "state-lambda-logs-policy"
   path        = "/"
@@ -135,6 +136,7 @@ resource "aws_iam_role_policy_attachment" "state_lambda_logs_policy_attach" {
   policy_arn = aws_iam_policy.state_lambda_logs_policy.arn
 }
 
+## DynamoDB Policy
 resource "aws_iam_policy" "state_lambda_dynamodb_policy" {
   name        = "state-lambda-dynamodb-policy"
   description = "Policy to allow State Lambda to persist on dynamodb table"
@@ -149,7 +151,9 @@ resource "aws_iam_policy" "state_lambda_dynamodb_policy" {
               "dynamodb:GetRecords",
               "dynamodb:GetShardIterator",
               "dynamodb:DescribeStream",
-              "dynamodb:ListStreams"
+              "dynamodb:ListStreams",
+              "dynamodb:UpdateItem",
+              "dynamodb:PutItem"
           ],
           "Resource": [
               "${aws_dynamodb_table.stateful_state_table.arn}"
@@ -174,11 +178,13 @@ resource "aws_cloudwatch_log_group" "state_lambda_log_group" {
   retention_in_days = 14
 }
 
+## Lambda
 resource "aws_lambda_function" "state_lambda" {
   filename      = "../images/lambdas/StateLambda.zip"
   function_name = var.state_lambda_function_name
   role          = aws_iam_role.state_lambda_iam_role.arn
   handler       = "RiskStateLambda::RiskStateLambda.Function::FunctionHandler"
+  timeout       = 60
 
   runtime = "dotnetcore3.1"
 
@@ -189,10 +195,13 @@ resource "aws_lambda_function" "state_lambda" {
   ]
 }
 
-resource "aws_lambda_event_source_mapping" "state_lambda_kinesis_event_mapping" {
-  event_source_arn  = aws_kinesis_stream.stateless_risk_data_stream.arn
-  function_name     = aws_lambda_function.state_lambda.arn
-  starting_position = "LATEST"
+## Kinesis Stream -> Lambda | Event Mapping
+resource "aws_lambda_event_source_mapping" "kinesis_lambda_event_mapping" {
+    batch_size = 100
+    event_source_arn = "${aws_kinesis_stream.stateless_risk_data_stream.arn}"
+    enabled = true
+    function_name = "${aws_lambda_function.state_lambda.arn}"
+    starting_position = "LATEST"
 }
 
 // dynamodb - reduce table
