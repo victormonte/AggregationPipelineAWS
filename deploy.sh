@@ -6,6 +6,8 @@ dotnet publish
 ## zip lambda
 rm -rf images/lambdas/StateLambda.zip
 zip -j images/lambdas/StateLambda.zip RiskStateLambda/src/RiskStateLambda/bin/Debug/netcoreapp3.1/publish/*
+rm -rf images/lambdas/MapLambda.zip
+zip -j images/lambdas/MapLambda.zip RiskMapLambda/src/RiskMapLambda/bin/Debug/netcoreapp3.1/publish/*
 
 ## run terraform
 cd ./terraform/ && terraform apply

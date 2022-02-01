@@ -79,6 +79,7 @@ resource "aws_iam_policy" "state_lambda_dynamodb_policy" {
               "dynamodb:GetShardIterator",
               "dynamodb:DescribeStream",
               "dynamodb:ListStreams",
+              "dynamodb:ListShards",
               "dynamodb:UpdateItem",
               "dynamodb:PutItem"
           ],
@@ -94,4 +95,39 @@ EOF
 resource "aws_iam_role_policy_attachment" "state_lambda_dynamodb_policy_attach" {
   role       = aws_iam_role.state_lambda_iam_role.name
   policy_arn = aws_iam_policy.state_lambda_dynamodb_policy.arn
+}
+
+resource "aws_iam_policy" "map_lambda_dynamodb_policy" {
+  name        = "map-lambda-dynamodb-policy"
+  description = "Policy to allow Map Lambda to persist on dynamodb table"
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Effect": "Allow",
+          "Action": [
+              "dynamodb:GetRecords",
+              "dynamodb:GetShardIterator",
+              "dynamodb:DescribeStream",
+              "dynamodb:ListStreams",
+              "dynamodb:ListShards",
+              "dynamodb:UpdateItem",
+              "dynamodb:PutItem"
+          ],
+          "Resource": [
+              "${aws_dynamodb_table.stateless_reduce_table.arn}",
+              "${aws_dynamodb_table.stateful_state_table.arn}",
+              "${aws_dynamodb_table.stateful_state_table.stream_arn}"
+          ]
+      }
+  ]
+}
+EOF
+}
+
+resource "aws_iam_role_policy_attachment" "map_lambda_dynamodb_policy_attach" {
+  role       = aws_iam_role.map_lambda_iam_role.name
+  policy_arn = aws_iam_policy.map_lambda_dynamodb_policy.arn
 }

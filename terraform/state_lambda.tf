@@ -43,7 +43,7 @@ resource "aws_cloudwatch_log_group" "state_lambda_log_group" {
 
 ## Kinesis Stream -> Lambda | Event Mapping
 resource "aws_lambda_event_source_mapping" "kinesis_lambda_event_mapping" {
-    batch_size = 100
+    batch_size = 10000
     event_source_arn = "${aws_kinesis_stream.stateless_risk_data_stream.arn}"
     enabled = true
     function_name = "${aws_lambda_function.state_lambda.arn}"
