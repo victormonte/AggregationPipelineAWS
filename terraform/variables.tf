@@ -6,3 +6,7 @@ variable "state_lambda_function_name" {
 variable "map_lambda_function_name" {
   default = "RiskMapLambda"
 }
+
+variable "reduce_lambda_function_name" {
+  default = "RiskReduceLambda"
+}
