@@ -3,5 +3,6 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::038EA2EB-C024-4BFB-99AE-95D57F815F7F::.NETCoreApp,Version=v3.1::RiskMapLambda.Tests.FunctionTest.TestFunction&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::C6529892-41A3-47EC-9EFA-ED7C33970234::.NETCoreApp,Version=v3.1::RiskReduceLambda.Tests.FunctionTest.TestFunction&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::69EAD978-3C5A-4F32-B900-B5FA4722089F::.NETCoreApp,Version=v3.1::RiskStateLambda.Tests.FunctionTest.TestFunction&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
