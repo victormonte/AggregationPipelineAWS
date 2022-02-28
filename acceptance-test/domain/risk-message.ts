@@ -1,16 +1,16 @@
-export class RiskMessage implements IRiskMessage {
+export class RiskMessage {
     public TradeId: string;
     Amount: number;
     Version: number;
     CreatedAt: Date;
-    Hierarchy: IHierarchy;
+    Hierarchy: Hierarchy;
 
     constructor(
         tradeId: string, 
         amount: number, 
         version: number, 
         createdAt: Date, 
-        hierarchy: IHierarchy) {
+        hierarchy: Hierarchy) {
         this.TradeId = tradeId;
         this.Amount = amount;
         this.Version = version;
@@ -19,7 +19,7 @@ export class RiskMessage implements IRiskMessage {
     }
 }
 
-export class Hierarchy implements IHierarchy {
+export class Hierarchy {
     RiskType: string;
     TradeDesk: string;
     Region: string;
@@ -29,19 +29,35 @@ export class Hierarchy implements IHierarchy {
         this.TradeDesk = tradeDesk;
         this.Region = region;
     }
-    
 }
 
-export interface IRiskMessage {
-    TradeId: string;
-    Amount: number;
-    Version: number;
-    CreatedAt: Date;
-    Hierarchy: IHierarchy;
+export interface IRiskMessageInputRow {
+    Amount: string;
+    Hierarchy: string; 
 }
 
-export interface IHierarchy{
-    RiskType: string;
-    TradeDesk: string;
-    Region: string;
+export class RiskMessageInputRow {
+    public Amount: number;
+    public Hierarchy: Hierarchy;
+
+    constructor({Amount, Hierarchy: HierarchyId}: IRiskMessageInputRow) {
+        this.Amount = Number(Amount);
+
+        var hierarchyList = HierarchyId.split(":", 3);
+        this.Hierarchy = new Hierarchy(hierarchyList[0], hierarchyList[1], hierarchyList[2]);
+    }
 }
+
+// export interface IRiskMessage {
+//     TradeId: string;
+//     Amount: number;
+//     Version: number;
+//     CreatedAt: Date;
+//     Hierarchy: IHierarchy;
+// }
+
+// export interface IHierarchy{
+//     RiskType: string;
+//     TradeDesk: string;
+//     Region: string;
+// }
