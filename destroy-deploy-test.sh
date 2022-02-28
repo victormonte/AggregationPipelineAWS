@@ -8,17 +8,17 @@ cd ./terraform/ && terraform refresh && terraform destroy
 echo "Building dotnet binaries"
 cd .. && dotnet publish
 
-### zip lambda
+## zip lambda
 
-## state lambda
+### state lambda
 rm -rf images/lambdas/StateLambda.zip
 zip -j images/lambdas/StateLambda.zip RiskStateLambda/src/RiskStateLambda/bin/Debug/netcoreapp3.1/publish/*
 
-## map lambda
+### map lambda
 rm -rf images/lambdas/MapLambda.zip
 zip -j images/lambdas/MapLambda.zip RiskMapLambda/src/RiskMapLambda/bin/Debug/netcoreapp3.1/publish/*
 
-## reduce lambda
+### reduce lambda
 rm -rf images/lambdas/ReduceLambda.zip
 zip -j images/lambdas/ReduceLambda.zip RiskReduceLambda/src/RiskReduceLambda/bin/Debug/netcoreapp3.1/publish/*
 
