@@ -50,9 +50,7 @@ export class RiskAggregation {
                 StreamName: "StatelessRiskDataStream",
                 PartitionKey: tradeId,
                 Data: JSON.stringify(this.riskMessage)
-            }, function (err, data) {
-                if (err) console.log(err, err.stack); // an error occurred
-            });
+            }).promise();
 
         } catch (error) {
             console.log(error);
@@ -84,9 +82,7 @@ export class RiskAggregation {
             StreamName: "StatelessRiskDataStream",
             PartitionKey: this.riskMessage.TradeId,
             Data: JSON.stringify(this.riskMessage)
-        }, function (err, data) {
-            if (err) console.log(err, err.stack); // an error occurred
-        });
+        }).promise();
     }
 
     @when(/^risk messages are published$/)
@@ -102,9 +98,7 @@ export class RiskAggregation {
                     StreamName: "StatelessRiskDataStream",
                     PartitionKey: riskMessage.TradeId,
                     Data: JSON.stringify(riskMessage)
-                }, function (err, data) {
-                    if (err) console.log(err, err.stack); // an error occurred
-                });
+                }).promise();
 
             } catch (error) {
                 console.log(error);
@@ -189,9 +183,7 @@ export class RiskAggregation {
                 TableName: "StatefulStateTable"
                };
 
-            await this.dynamodb.deleteItem(params, function(err, data) {
-                if (err) console.log(err, err.stack);
-            });
+            await this.dynamodb.deleteItem(params).promise();
         }
         
         this.riskMessage = null;
@@ -208,9 +200,7 @@ export class RiskAggregation {
                 TableName: "StatefulStateTable"
                };
 
-            await this.dynamodb.deleteItem(params, function(err, data) {
-                if (err) console.log(err, err.stack);
-            });
+            await this.dynamodb.deleteItem(params).promise();
         }
 
         this.riskMessages = [];
@@ -267,9 +257,7 @@ export class RiskAggregation {
                         TableName: "StatelessAggregateTable"
                     };
 
-                    await this.dynamodb.deleteItem(params, function(err, data) {
-                        if (err) console.log(err, err.stack)
-                    });
+                    await this.dynamodb.deleteItem(params).promise();
 
                 });
             });
