@@ -122,7 +122,7 @@ export class RiskAggregation {
            };
 
         // wait pipeline to catch up
-        await this.sleep(10000);
+        await this.sleep(5000);
 
         var result = await this.dynamodb.query(params).promise();
 
@@ -169,7 +169,7 @@ export class RiskAggregation {
         if (this.dynamodb == null) throw new Error("Dynamodb cannot be null");
 
         // wait pipeline to catch up
-        await this.sleep(10000);
+        await this.sleep(5000);
 
         // clear single risk message
         if (this.riskMessage != null)

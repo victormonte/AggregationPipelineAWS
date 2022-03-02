@@ -25,10 +25,3 @@ zip -j images/lambdas/ReduceLambda.zip RiskReduceLambda/src/RiskReduceLambda/bin
 ## run terraform
 echo "Applying terraform..."
 cd ./terraform/ && terraform apply
-
-echo "Waiting architecture to setup..."
-sleep 120
-
-# run acceptance tests
-echo "Running accceptance tests..."
-cd ../acceptance-test/ && npm test
