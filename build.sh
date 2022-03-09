@@ -1,12 +1,8 @@
 #!/bin/bash
 
-# destroy
-echo "Destroying pipeline..."
-cd ./terraform/ && terraform refresh && terraform destroy
-
 # publish lambdas
 echo "Building dotnet binaries"
-cd .. && dotnet publish
+dotnet publish
 
 ## zip lambda
 

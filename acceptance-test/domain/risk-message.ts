@@ -47,17 +47,3 @@ export class RiskMessageInputRow {
         this.Hierarchy = new Hierarchy(hierarchyList[0], hierarchyList[1], hierarchyList[2]);
     }
 }
-
-// export interface IRiskMessage {
-//     TradeId: string;
-//     Amount: number;
-//     Version: number;
-//     CreatedAt: Date;
-//     Hierarchy: IHierarchy;
-// }
-
-// export interface IHierarchy{
-//     RiskType: string;
-//     TradeDesk: string;
-//     Region: string;
-// }
